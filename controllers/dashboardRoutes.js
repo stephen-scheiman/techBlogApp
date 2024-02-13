@@ -30,12 +30,41 @@ router.get("/:id", async (req, res) => {
       userID: req.session.userId,
       userName: req.session.userName,
     });
-    console.log(req.session.userId);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+// router.get('/post/:id', async (req, res) => {
+//   try {
+//     const postData = await Post.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['user_name'],
+//         },
+//       ],
+//     });
+
+//     const post = postData.get({ plain: true });
+
+//     res.render('dashboard', {
+//       ...post,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+
+// router.get("/newPost", async (req, res)=>{
+//   console.log("Why doesn't this fire my view");
+//   res.json("This is a test");
+//   res.render('newpost');
+// });
+
 
 
 

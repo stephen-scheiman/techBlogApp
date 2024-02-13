@@ -27,42 +27,22 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/post/:id', async (req, res) => {
-  try {
-    const postData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['user_name'],
-        },
-      ],
-    });
-
-    const post = postData.get({ plain: true });
-
-    res.render('post', {
-      ...post,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// Use withAuth middleware to prevent access to route
-// router.get('/dashboard', async (req, res) => {
+// router.get('/post/:id', async (req, res) => {
 //   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Post }],
+//     const postData = await Post.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['user_name'],
+//         },
+//       ],
 //     });
 
-//     const user = userData.get({ plain: true });
+//     const post = postData.get({ plain: true });
 
-//     res.render('dashboard', {
-//       ...user,
-//       logged_in: true
+//     res.render('post', {
+//       ...post,
+//       logged_in: req.session.logged_in
 //     });
 //   } catch (err) {
 //     res.status(500).json(err);

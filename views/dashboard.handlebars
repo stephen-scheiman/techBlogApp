@@ -2,9 +2,12 @@
 
 <header class="display-flex justify-space-around align-start align-center p-2">
 <h2>{{userName}}'s Dashboard</h2>
-<button id="createPost" class="btn">Create Post</button>
+{{!-- <button id="createPost" class="btn">Create Post</button> --}}
 </header>
+<div class="hidden" id="userID">{{userID}}</div>
 
+{{> newpost}}
+<h3>Your Posts</h3>
 {{#each userPosts}}
 {{> post-details}}
 {{/each}}
@@ -13,4 +16,5 @@
 <a href="/login">You must login first to view your dashboard</a>
 {{/if}}
 
-<script src="/js/dashboard.js"></script>
+{{!-- <script src="/js/dashboard.js"></script> --}}
+<script src="/js/newpost.js"></script>
