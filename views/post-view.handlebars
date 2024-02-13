@@ -7,11 +7,11 @@
   <div class="card-header">
     <div class="hidden" id="postID">{{post_id}}</div>
     <a href="/dashboard/postDetail/{{post_id}}">
-      <h4>{{post_title}} Posted By: {{user.user_name}} On: {{posted_date}}</h4>
+      <h4 id="postTitle">{{post_title}}</h4> Posted By: {{user.user_name}} On: {{posted_date}}
     </a>
   </div>
   <div class="card-body">
-    <p>{{post_body}}</p>
+    <p id="postBody">{{post_body}}</p>
   </div>
   <div class="card-footer">
 
@@ -21,4 +21,6 @@
   </div>
 </section>
 
-<script src="/js/postdetail.js"></script>
+{{>updatepost}}
+
+<script src="/js/postDetail.js"></script>

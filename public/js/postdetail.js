@@ -1,67 +1,63 @@
 //Function to delete a post
 const deletePost = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-const result = confirm("Are you sure you want to delete this post?");
+  const result = confirm("Are you sure you want to delete this post?");
 
-if (result) {
+  if (result) {
+    const postID = document.getElementById("postID").innerHTML;
 
-const postID = document.getElementById('postID').innerHTML;  
-  
-const response = await fetch("/api/posts/" + postID, {
-  method: "DELETE",
-  headers: { "Content-Type": "application/json" },
-  });
+    const response = await fetch("/api/posts/" + postID, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
 
-if (response.ok) {
-  // If successful, redirect the browser to the dashboard page
-  document.location.replace("/dashboard/");
-  } else {
-  alert(response.statusText);
-  }  
-}
-}
+    if (response.ok) {
+      // If successful, redirect the browser to the dashboard page
+      document.location.replace("/dashboard/");
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
 //Function to update a post
-// const updatePost = async (event) => {
-//     event.preventDefault();
+const updatePost = async (event) => {
+  event.preventDefault();
 
-// const postID = document.getElementById('postID').innerHTML;  
-// const post_title = document.querySelector("#post-title").value.trim();
-// const post_body = document.querySelector("#post-body").value.trim();
-
-// const response = await fetch("/dashboard/onePost/" + postID, {
-//     method: "GET",
-//     headers: { "Content-Type": "application/json" },
-//   });
-
-//   if (response.ok) {
-//     console.log(response);
-//     // If successful, redirect the browser to the dashboard page
-//     document.location.replace("/dboardupdate");
-//   } else {
-//     alert(response.statusText);
-//   }
-
-
+  const postTitle = document.getElementById("postTitle").innerHTML;
+  const postBody = document.getElementById("postBody").innerHTML;
   
-// // const response = await fetch("/api/posts/" + postID, {
-// //     method: "PUT",
-// //     body: JSON.stringify({ post_title, post_body }),
-// //     headers: { "Content-Type": "application/json" },
-// //     });
+  document.getElementById('post-title').value = postTitle;
+  document.getElementById('post-body').value = postBody;
 
-// // if (response.ok) {
-// //     // If successful, redirect the browser to the dashboard page
-// //     document.location.replace("/dashboard");
-// //     } else {
-// //     alert(response.statusText);
-// //     } 
-// }
+};
 
-document
-  .querySelector('#deletePost')
-  .addEventListener('click', deletePost);
+//Function to submit the updated post (kinda weird, I know)
+const submitUpdatedPost = async (event) => {
+  event.preventDefault();
 
-  document
-  .querySelector('#updatePost')
-  .addEventListener('click', updatePost);
+  const postID = document.getElementById("postID").innerHTML;
+  const postTitle = document.getElementById("postTitle").innerHTML;
+  const postBody = document.getElementById("postBody").innerHTML;
+
+  if (postTitle && postBody) {
+    // Send a POST request to the API endpoint
+    const response = await fetch("/api/posts/" + postID, {
+      method: "PUT",
+      body: JSON.stringify({ postTitle, postBody }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      // If successful, redirect the browser to the dashboard page
+      document.location.replace("/dashboard");
+    } else {
+      alert(response.statusText);
+    }
+  }
+}
+
+
+document.getElementById("deletePost").addEventListener("click", deletePost);
+document.getElementById("updatePost").addEventListener("click", updatePost);
+document.getElementById("formUpdate").addEventListener("click", submitUpdatedPost);
