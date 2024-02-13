@@ -1,9 +1,9 @@
-const router = require('express').Router();
-const { Post } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Post } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 //Create new post
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
@@ -17,15 +17,34 @@ router.post('/', async (req, res) => {
 });
 
 //Delete existing post
-router.delete('/:id', async (req, res) => {
+router.delete("/:post_id", async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {
-       post_id: req.params.id,
+        post_id: req.params.post_id,
       },
     });
     res.status(200).json(postData);
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//Update an existing post
+router.put("/:post_id", async (req, res) => {
+  try {
+    const updatePost = await Post.update({
+      post_title: req.body.post_title,
+      post_body: req.body.post_body,
+    },
+    {
+      where: {
+        post_id: req.params.post_id,
+      },
+    });
+    res.status(200).json(updatePost);
+  } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
