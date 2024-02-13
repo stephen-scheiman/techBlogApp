@@ -1,0 +1,19 @@
+{{#if loggedIn}}
+<header class="display-flex justify-space-around align-start align-center p-2">
+<h2>{{userName}}'s Dashboard</h2>
+</header>
+<div class="hidden" id="userID">{{userID}}</div>
+{{> updatepost}}
+
+<h3>Your Posts</h3>
+
+{{#each userPosts}}
+{{> dashboarddetails}}
+{{/each}}
+
+{{else}}
+<a href="/login">You must login first to view your dashboard</a>
+{{/if}}
+
+<script src="/js/newpost.js"></script>
+<script src="/js/dashboard.js"></script>

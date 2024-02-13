@@ -37,27 +37,27 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// router.get('/post/:id', async (req, res) => {
-//   try {
-//     const postData = await Post.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['user_name'],
-//         },
-//       ],
-//     });
+router.get("/onePost/:id", async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["user_name"],
+        },
+      ],
+    });
 
-//     const post = postData.get({ plain: true });
+    const post = postData.get({ plain: true });
+    console.log(post);
 
-//     res.render('dashboard', {
-//       ...post,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
+    res.render("dboardupdate", {
+      ...post,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
