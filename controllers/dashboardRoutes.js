@@ -20,6 +20,7 @@ router.get("/:id", async (req, res) => {
           attributes: ["user_name"],
         },
       ],
+      order: [["posted_date", "DESC"]],
     });
 
     const userPosts = getPostsByUser.map((post) => post.get({ plain: true }));
@@ -57,16 +58,6 @@ router.get("/:id", async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
-
-
-// router.get("/newPost", async (req, res)=>{
-//   console.log("Why doesn't this fire my view");
-//   res.json("This is a test");
-//   res.render('newpost');
-// });
-
-
-
 
 
 module.exports = router;

@@ -12,15 +12,16 @@ router.get('/', async (req, res) => {
           attributes: ['user_name', 'user_id'],
         },
       ],
+      order: [['posted_date', 'DESC']]
     });
 
-    // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
     res.render('homepage', { 
       posts, 
-      logged_in: req.session.logged_in 
+      loggedIn: req.session.loggedIn,
+      userID: req.session.userId,
+      userName: req.session.userName,
     });
   } catch (err) {
     res.status(500).json(err);

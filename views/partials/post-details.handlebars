@@ -1,14 +1,16 @@
 <section class="card card-rounded">
-    <div class="card-header">
-    <a href = '/singlepost/{{user_id}}'>
+  <div class="card-header">
+    <a href="/singlepost/{{user_id}}">
       <h4>{{post_title}} Posted By: {{user.user_name}} On: {{posted_date}}</h4>
     </a>
-    </div>
-    <div class="card-body">
-      <p>{{post_body}}</p>
-    </div>
-    <div class="card-footer">
-    <button id="updatePost" class="btn">Update Post</button> 
-    <button id="deletePost" class="btn">Delete Post</button> 
-    </div>
+  </div>
+  <div class="card-body">
+    <p>{{post_body}}</p>
+  </div>
+  <div class="card-footer">
+    {{#if loggedIn}}
+      <button id="updatePost" class="btn">Update Post</button>
+      <button id="deletePost" class="btn">Delete Post</button>
+    {{/if}}
+  </div>
 </section>
