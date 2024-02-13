@@ -1,0 +1,17 @@
+<section class="card card-rounded">
+  <div class="card-header">
+    <div class="hidden" id="postID">{{post_id}}</div>
+    <a href="/singlepost/" + {{user.user_id}}>
+      <h4>{{post_title}} Posted By: {{user.user_name}} On: {{posted_date}}</h4>
+    </a>
+  </div>
+  <div class="card-body">
+    <p>{{post_body}}</p>
+  </div>
+  <div class="card-footer">
+
+    <button id="updatePost" class="btn">Update Post</button>
+    <button id="deletePost" class="btn">Delete Post</button>
+
+  </div>
+</section>
