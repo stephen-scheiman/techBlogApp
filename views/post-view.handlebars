@@ -1,3 +1,8 @@
+<header class="display-flex justify-space-around align-start align-center p-2">
+  <h2>Post Detail View</h2>
+</header>
+<div class="hidden" id="userID">{{userID}}</div>
+
 <section class="card card-rounded">
   <div class="card-header">
     <div class="hidden" id="postID">{{post_id}}</div>
@@ -9,5 +14,11 @@
     <p>{{post_body}}</p>
   </div>
   <div class="card-footer">
+
+    <button id="updatePost" class="btn">Update Post</button>
+    <button id="deletePost" class="btn">Delete Post</button>
+
   </div>
 </section>
+
+<script src="/js/postdetail.js"></script>

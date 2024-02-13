@@ -37,7 +37,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.get("/onePost/:id", async (req, res) => {
+router.get("/postDetail/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -51,7 +51,7 @@ router.get("/onePost/:id", async (req, res) => {
     const post = postData.get({ plain: true });
     console.log(post);
 
-    res.render("dboardupdate", {
+    res.render("post-view", {
       ...post,
       logged_in: req.session.logged_in,
     });
