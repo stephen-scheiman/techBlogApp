@@ -20,3 +20,10 @@ header {
 .hidden {
   display: none;
 }
+
+#post-body {
+  height:10em;
+  justify-content: start;
+  align-content: start;
+  text-align: start;
+}
