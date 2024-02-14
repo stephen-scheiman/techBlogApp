@@ -37,6 +37,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//Get a single post for detail view
 router.get("/postDetail/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
