@@ -1,11 +1,18 @@
 <section class="card card-rounded">
+
   <div class="card-header">
       <h4>{{post_title}} Posted By: {{user.user_name}} On: {{posted_date}}</h4>
-    </a>
   </div>
+
   <div class="card-body">
     <p>{{post_body}}</p>
   </div>
-  <div class="card-footer">
+
+  <div>
+    <p>Post comments</p>
+    {{#each comments}}
+      <p>{{comment_body}}</p>
+    {{/each}}
   </div>
+
 </section>

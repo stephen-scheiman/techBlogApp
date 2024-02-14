@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post, User } = require("../models");
+const { Comment, Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 //Initial route for landing
@@ -18,6 +18,10 @@ router.get("/:id", async (req, res) => {
         {
           model: User,
           attributes: ["user_name"],
+        },
+        {
+          model: Comment,
+          attributes: ["comment_id", "comment_body", "comment_post"],
         },
       ],
       order: [["posted_date", "DESC"]],

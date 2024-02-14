@@ -1,13 +1,27 @@
 <section class="card card-rounded">
+
   <div class="card-header">
+
     <div class="hidden" id="postID">{{post_id}}</div>
+
     <a href="/dashboard/postDetail/{{post_id}}">
       <h4>{{post_title}} Posted By: {{user.user_name}} On: {{posted_date}}</h4>
     </a>
   </div>
+
   <div class="card-body">
     <p>{{post_body}}</p>
   </div>
+
+  <div>
+    <p>Post comments</p>
+    {{#each comments}}
+      <p>{{comment_body}}</p>
+    {{/each}}
+   </div>
+
   <div class="card-footer">
+     <button id="addComment" class="btn">Add Comment</button>
   </div>
+  
 </section>

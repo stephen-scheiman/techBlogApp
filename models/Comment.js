@@ -28,6 +28,14 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    comment_post: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'post',
+        key: 'post_id',
+      },
+    },
   },
   {
     sequelize,
