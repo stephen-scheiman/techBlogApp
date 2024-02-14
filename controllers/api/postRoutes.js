@@ -31,7 +31,7 @@ router.delete("/:post_id", async (req, res) => {
 });
 
 //Update an existing post
-router.put("/:post_id", async (req, res) => {
+router.put("/update/:post_id", async (req, res) => {
   try {
     const updatePost = await Post.update({
       post_title: req.body.post_title,
