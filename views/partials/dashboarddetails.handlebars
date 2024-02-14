@@ -13,12 +13,16 @@
     <p>{{post_body}}</p>
   </div>
 
-  <div>
-    <p>Post comments</p>
+ {{#if comments}}
+  <div class="card-header">
+    <h6>Post comments</h6>
+  </div>
     {{#each comments}}
-      <p>{{comment_body}}</p>
+      <div class="card-body">
+        {{comment_body}} Comment Posted By: {{commentPosted_by}}
+      </div>
     {{/each}}
-   </div>
+ {{/if}} 
 
   <div class="card-footer">
      <button id="addComment" class="btn">Add Comment</button>

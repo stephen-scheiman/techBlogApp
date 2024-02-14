@@ -21,7 +21,7 @@ router.get("/:id", async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ["comment_id", "comment_body", "comment_post"],
+          attributes: ["comment_id", "comment_body", "comment_post", "commentPosted_by"],
         },
       ],
       order: [["posted_date", "DESC"]],
