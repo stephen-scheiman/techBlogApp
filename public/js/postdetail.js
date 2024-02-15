@@ -74,6 +74,7 @@ const addComment = async (event) => {
     commentPosted_by,
     comment_post,
   });
+  
 
   if (comment_body) {
     try {
