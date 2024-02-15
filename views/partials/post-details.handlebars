@@ -16,10 +16,12 @@
       <h6>Post comments</h6>
     </div>
     {{#each comments}}
-      <div class="card-body">
+       <div class="card-body" id="comment">
         {{comment_body}}
+        <div id="commenter">
         Comment Posted By:
         {{commentPosted_by}}{{user.user_name}}
+        </div>
       </div>
     {{/each}}
   {{/if}}

@@ -2,6 +2,11 @@ header {
   border-bottom: 1px solid #ccc;
 }
 
+a {
+  text-decoration: none;
+
+}
+
 .no-button {
   background: none;
   border: none;
@@ -26,4 +31,14 @@ header {
   justify-content: start;
   align-content: start;
   text-align: start;
+}
+
+#loginWarn {
+  font-size: 4em;
+  color: red;
+  justify-self:center;
+}
+
+#commenter {
+  font-size: x-small;
 }
