@@ -1,26 +1,40 @@
 <header class="display-flex justify-space-around align-start align-center p-2">
   <h2>Post Detail View</h2>
 </header>
-<div class="hidden" id="userID">{{userID}}</div>
+
+<div class="hidden" id="userID">{{user.user_id}}</div>
+<div class="hidden" id="postID">{{post_id}}</div>
 
 <section class="card card-rounded">
+
   <div class="card-header">
-    <div class="hidden" id="postID">{{post_id}}</div>
     <a href="/dashboard/postDetail/{{post_id}}">
       <h4 id="postTitle">{{post_title}}</h4> Posted By: {{user.user_name}} On: {{posted_date}}
     </a>
   </div>
+
   <div class="card-body">
     <p id="postBody">{{post_body}}</p>
   </div>
-  <div class="card-footer">
 
+   {{#if comments}}
+  <div class="card-header">
+    <h6>Post comments</h6>
+  </div>
+    {{#each comments}}
+      <div class="card-body">
+        {{comment_body}} Comment Posted By: {{commentPosted_by}}
+      </div>
+    {{/each}}
+ {{/if}} 
+
+  <div class="card-footer">
     <button id="updatePost" class="btn">Update Post</button>
     <button id="deletePost" class="btn">Delete Post</button>
-
   </div>
 </section>
 
 {{>updatepost}}
+{{>addcomment}}
 
-//<script src="/js/postdetail.js"></script>
+<script src="/js/postdetail.js"></script>
