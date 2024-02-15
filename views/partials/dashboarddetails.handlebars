@@ -13,15 +13,17 @@
     <p>{{post_body}}</p>
   </div>
 
- {{#if comments}}
-  <div class="card-header">
-    <h6>Post comments</h6>
-  </div>
+  {{#if comments}}
+    <div class="card-header">
+      <h6>Post comments</h6>
+    </div>
     {{#each comments}}
       <div class="card-body">
-        {{comment_body}} Comment Posted By: {{commentPosted_by}}
+        {{comment_body}}
+        Comment Posted By:
+        {{commentPosted_by}}
       </div>
     {{/each}}
- {{/if}} 
-  
+  {{/if}}
+
 </section>

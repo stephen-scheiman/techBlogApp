@@ -5,7 +5,7 @@ const createNewPost = async (event) => {
   const post_title = document.querySelector("#post-title").value.trim();
   const post_body = document.querySelector("#post-body").value.trim();
   const posted_by = document.getElementById("userID").innerHTML;
- 
+
   if (post_title && post_body) {
     // Send a POST request to the API endpoint
     const response = await fetch("/api/posts", {
@@ -23,7 +23,4 @@ const createNewPost = async (event) => {
   }
 };
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', createNewPost);
-
+document.querySelector(".login-form").addEventListener("submit", createNewPost);

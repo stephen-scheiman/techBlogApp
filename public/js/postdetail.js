@@ -69,7 +69,11 @@ const addComment = async (event) => {
   const comment_body = document.getElementById("comment-body").value;
   const comment_post = document.getElementById("postID").textContent;
   const commentPosted_by = document.getElementById("userID").textContent;
-  const payload = JSON.stringify({comment_body, commentPosted_by, comment_post});
+  const payload = JSON.stringify({
+    comment_body,
+    commentPosted_by,
+    comment_post,
+  });
 
   if (comment_body) {
     try {

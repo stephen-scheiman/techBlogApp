@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { Post } = require("../../models");
-const withAuth = require("../../utils/auth");
 
 //Create new post
 router.post("/", async (req, res) => {
@@ -33,15 +32,17 @@ router.delete("/:post_id", async (req, res) => {
 //Update an existing post
 router.put("/update/:post_id", async (req, res) => {
   try {
-    const updatePost = await Post.update({
-      post_title: req.body.post_title,
-      post_body: req.body.post_body,
-    },
-    {
-      where: {
-        post_id: req.params.post_id,
+    const updatePost = await Post.update(
+      {
+        post_title: req.body.post_title,
+        post_body: req.body.post_body,
       },
-    });
+      {
+        where: {
+          post_id: req.params.post_id,
+        },
+      }
+    );
     res.status(200).json(updatePost);
   } catch (err) {
     console.log(err);
