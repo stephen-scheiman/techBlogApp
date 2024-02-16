@@ -5,7 +5,10 @@
     <div class="hidden" id="postID">{{post_id}}</div>
 
     <a href="/dashboard/postDetail/{{post_id}}">
-      <h4>{{post_title}} Posted By: {{user.user_name}} On: {{posted_date}}</h4>
+      <h4>{{post_title}}</h4>Posted By:
+      {{user.user_name}}
+      On:
+      {{posted_date}}
     </a>
   </div>
 
@@ -18,11 +21,11 @@
       <h6>Post comments</h6>
     </div>
     {{#each comments}}
-          <div class="card-body" id="comment">
+      <div class="card-body" id="comment">
         {{comment_body}}
         <div id="commenter">
-        Comment Posted By:
-        {{commentPosted_by}}{{userName}}
+          Comment Posted By:
+          {{commentPosted_by}}{{userName}}
         </div>
       </div>
     {{/each}}

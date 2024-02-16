@@ -87,8 +87,9 @@ const addComment = async (event) => {
 
       if (response.ok) {
         // If successful, redirect the browser to the dashboard page
+        const postID = document.getElementById("postID").textContent;
         console.log("Comment posted successfully");
-        document.location.replace("/dashboard");
+        document.location.replace("/dashboard/postDetail/" + postID);
       } else {
         throw new Error(response.statusText); // Throw error for non-successful response
       }
@@ -100,6 +101,10 @@ const addComment = async (event) => {
     alert("Comment cannot be empty");
   }
 };
+
+Handlebars.registerHelper('isdefined', function (value) {
+  return value !== undefined;
+});
 
 document.getElementById("deletePost").addEventListener("click", deletePost);
 document.getElementById("updatePost").addEventListener("click", updatePost);
