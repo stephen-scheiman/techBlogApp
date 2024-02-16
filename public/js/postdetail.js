@@ -102,10 +102,6 @@ const addComment = async (event) => {
   }
 };
 
-Handlebars.registerHelper('isdefined', function (value) {
-  return value !== undefined;
-});
-
 document.getElementById("deletePost").addEventListener("click", deletePost);
 document.getElementById("updatePost").addEventListener("click", updatePost);
 document.getElementById("comment-submit").addEventListener("click", addComment);
