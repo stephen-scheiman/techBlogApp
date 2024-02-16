@@ -1,12 +1,19 @@
 <section class="card card-rounded">
 
   <div class="card-header">
+    {{#if ../loggedIn}}
     <a href="/dashboard/postDetail/{{post_id}}">
       <h4>{{post_title}}</h4>Posted By:
       {{user.user_name}}
       On:
       {{posted_date}}
     </a>
+    {{else}}
+      <h4>{{post_title}}</h4>Posted By:
+      {{user.user_name}}
+      On:
+      {{posted_date}}
+    {{/if}}
   </div>
 
   <div class="card-body">
