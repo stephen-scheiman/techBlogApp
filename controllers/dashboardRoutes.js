@@ -63,6 +63,12 @@ router.get("/postDetail/:id", async (req, res) => {
         {
           model: Comment,
           attributes: ["comment_body", "commentPosted_by"],
+          include: [
+            {
+              model: User,
+              attributes: ["user_name", "user_id"],
+            }
+          ]
         },
       ],
     });
