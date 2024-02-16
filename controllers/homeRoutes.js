@@ -18,6 +18,12 @@ router.get("/", async (req, res) => {
             "comment_post",
             "commentPosted_by",
           ],
+          include: [
+            {
+              model: User,
+              attributes: ["user_name"],
+            }
+          ]
         },
       ],
       order: [["posted_date", "DESC"]],
