@@ -24,8 +24,8 @@
       <div class="card-body" id="comment">
         {{comment_body}}
         <div id="commenter">
-          Comment Posted By:
-          {{commentPosted_by}}{{userName}}
+        Comment Posted By:
+       {{user.[comments.commentPosted_by].user_name}}
         </div>
       </div>
     {{/each}}

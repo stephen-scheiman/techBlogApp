@@ -1,16 +1,10 @@
 <section class="card card-rounded">
 
   <div class="card-header">
-    {{!-- <a href="/dashboard/postDetail/{{post_id}}">
-      <h4>{{post_title}}</h4>Posted By:
-      {{user.user_name}}
-      On:
-      {{posted_date}}
-    </a> --}}
-      <h4>{{post_title}}</h4>Posted By:
-      {{user.user_name}}
-      On:
-      {{posted_date}}
+    <h4>{{post_title}}</h4>Posted By:
+    {{user.user_name}}
+    On:
+    {{posted_date}}
   </div>
 
   <div class="card-body">
@@ -20,8 +14,10 @@
     <div class="card-header">
       <h6>Post comments</h6>
     </div>
-    {{#each comments}}
+     {{log user.user_name}}
+    {{#each comments as |comment index|}}
        <div class="card-body" id="comment">
+        {{!-- Comment #: {{index}} --}}
         {{comment_body}}
         <div id="commenter">
         Comment Posted By:
