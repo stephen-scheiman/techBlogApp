@@ -1,4 +1,11 @@
+{{#if loggedIn}}
 {{#each posts as |post| }}
-{{>post-details this}}
+{{> post-details}}
 {{/each}}
+{{else}}
+{{#each posts as |post|}}
+{{> post-nolinks}}
+{{/each}}
+{{/if}}
+
 
