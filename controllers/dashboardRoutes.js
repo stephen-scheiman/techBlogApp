@@ -34,6 +34,7 @@ router.get("/:id", async (req, res) => {
           ]
         },
       ],
+      nested: true,
       order: [["posted_date", "DESC"]],
     });
 
@@ -71,6 +72,7 @@ router.get("/postDetail/:id", async (req, res) => {
           ],
         },
       ],
+      nested: true,
     });
 
     const post = postData.get({ plain: true });

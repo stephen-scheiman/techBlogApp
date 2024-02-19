@@ -26,6 +26,7 @@ router.get("/", async (req, res) => {
           ] 
         },
       ],
+      nested: true,
       order: [["posted_date", "DESC"]],
     });
 
