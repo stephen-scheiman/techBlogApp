@@ -13,7 +13,8 @@
 {{/each}}
 
 {{else}}
-<a id="loginWarn" href="/login">You must login first to view your dashboard</a>
+<p id="loginWarn">You must login first to view your dashboard, redirecting to login page</p>
+<meta http-equiv="Refresh" content="2; url='/login'" />
 {{/if}}
 
 <script src="/js/newpost.js"></script>
