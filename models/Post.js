@@ -32,6 +32,14 @@ Post.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    post_comments: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "comment",
+        key: "comment_id",
+      }
+    }
   },
   {
     sequelize,

@@ -32,13 +32,17 @@
     {{/each}}
  {{/if}} 
 
+
+</section>
+{{log user.user_id}}
+{{log posted_by}}
+{{#eq user.user_id posted_by}}
   <div class="card-footer">
     <button id="updatePost" class="btn">Update Post</button>
     <button id="deletePost" class="btn">Delete Post</button>
   </div>
-</section>
-
 {{>updatepost}}
+{{/eq}}
 {{>addcomment}}
 
 <script src="/js/postdetail.js"></script>

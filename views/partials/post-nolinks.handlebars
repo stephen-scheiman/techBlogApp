@@ -14,10 +14,8 @@
     <div class="card-header">
       <h6>Post comments</h6>
     </div>
-     {{log user.user_name}}
-    {{#each comments as |comment index|}}
+    {{#each comments}}
        <div class="card-body" id="comment">
-        {{!-- Comment #: {{index}} --}}
         {{comment_body}}
         <div id="commenter">
         Comment Posted By:

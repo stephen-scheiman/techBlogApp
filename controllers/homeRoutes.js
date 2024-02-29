@@ -23,15 +23,15 @@ router.get("/", async (req, res) => {
               model: User,
               attributes: ["user_name"],
             }
-          ] 
+          ], 
         },
       ],
-      nested: true,
+      nested:true,
       order: [["posted_date", "DESC"]],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-
+    console.log(posts);
     res.render("homepage", {
       posts,
       loggedIn: req.session.loggedIn,
