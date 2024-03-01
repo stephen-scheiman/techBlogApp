@@ -10,5 +10,13 @@ module.exports = {
     } else {
       return false;
     }
+  },
+
+  noteq: (user_id, posted_by) => {
+    if (user_id !== posted_by) {
+      return true;
+    } else {
+      return false;
+    }
   }
 };

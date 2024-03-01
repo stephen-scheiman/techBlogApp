@@ -75,7 +75,6 @@ const addComment = async (event) => {
     comment_post,
   });
   
-
   if (comment_body) {
     try {
       // Send a POST request to the API endpoint

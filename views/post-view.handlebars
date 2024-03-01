@@ -34,15 +34,15 @@
 
 
 </section>
-{{log user.user_id}}
-{{log posted_by}}
-{{#eq user.user_id posted_by}}
+{{#if (eq userID posted_by)}}
   <div class="card-footer">
     <button id="updatePost" class="btn">Update Post</button>
     <button id="deletePost" class="btn">Delete Post</button>
   </div>
 {{>updatepost}}
-{{/eq}}
+{{/if}}
+{{!-- {{#if (noteq userID posted_by)}} --}}
 {{>addcomment}}
+{{!-- {{/if}} --}}
 
 <script src="/js/postdetail.js"></script>
