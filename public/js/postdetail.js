@@ -74,7 +74,7 @@ const addComment = async (event) => {
     commentPosted_by,
     comment_post,
   });
-  
+
   if (comment_body) {
     try {
       // Send a POST request to the API endpoint
@@ -101,9 +101,22 @@ const addComment = async (event) => {
   }
 };
 
-document.getElementById("deletePost").addEventListener("click", deletePost);
-document.getElementById("updatePost").addEventListener("click", updatePost);
-document.getElementById("comment-submit").addEventListener("click", addComment);
-document
-  .getElementById("formUpdate")
-  .addEventListener("click", submitUpdatedPost);
+if (document.getElementById("deletePost")) {
+  document.getElementById("deletePost").addEventListener("click", deletePost);
+}
+
+if (document.getElementById("updatePost")) {
+  document.getElementById("updatePost").addEventListener("click", updatePost);
+}
+
+if (document.getElementById("comment-submit")) {
+  document
+    .getElementById("comment-submit")
+    .addEventListener("click", addComment);
+}
+
+if (document.getElementById("updatePost")) {
+  document
+    .getElementById("formUpdate")
+    .addEventListener("click", submitUpdatedPost);
+}

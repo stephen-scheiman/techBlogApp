@@ -21,6 +21,7 @@
   <div class="card-header">
     <h6>Post comments</h6>
   </div>
+  {{log userName}}
     {{#each comments}}
         <div class="card-body" id="comment">
         {{comment_body}}
@@ -41,8 +42,8 @@
   </div>
 {{>updatepost}}
 {{/if}}
-{{!-- {{#if (noteq userID posted_by)}} --}}
+{{#if (noteq userID posted_by)}}
 {{>addcomment}}
-{{!-- {{/if}} --}}
+{{/if}}
 
 <script src="/js/postdetail.js"></script>
