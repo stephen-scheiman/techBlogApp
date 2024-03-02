@@ -2,7 +2,7 @@
   <h2>Post Detail View</h2>
 </header>
 
-<div class="hidden" id="userID">{{user.user_id}}</div>
+<div class="hidden" id="userID">{{userID}}</div>
 <div class="hidden" id="postID">{{post_id}}</div>
 
 <section class="card card-rounded">
@@ -21,7 +21,6 @@
   <div class="card-header">
     <h6>Post comments</h6>
   </div>
-  {{log userName}}
     {{#each comments}}
         <div class="card-body" id="comment">
         {{comment_body}}
