@@ -6,6 +6,17 @@ a {
   text-decoration: none;
 }
 
+#postLogo {
+  width: 5%;
+  height: 5%;
+  justify-self: right;
+}
+
+#mainHeaderLogo {
+  width: 20%;
+  height: 20%;
+}
+
 .no-button {
   background: none;
   border: none;

@@ -8,7 +8,9 @@ A CMS-style blog site similar to a Wordpress site, where developers can publish 
 
 This is my first full stack web application built from scratch. It was a great exercise that helped me see the big picture and really understand the MVC model. It was a struggle at times differentiating between front end APIs and the back end APIs and the various variables at play in each, but the MVC model helped me keep them straight. 
 
-Thanks to Sarun Thunyapauksanon for the help with making the comment names work and all the other stuff you've taught me!
+## Screenshot
+
+![alt text](public/img/screenshot.png "Screenshot")
 
 ## Table of Contents
 
